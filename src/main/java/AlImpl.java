@@ -47,7 +47,7 @@ public class AlImpl {
     private void removeFirstNameList() {
         long start = System.nanoTime();
         for (int i = 0; i < namesList.size() * 0.05; i++) {
-            namesList.remove(i);
+            namesList.remove(0);
         }
         //System.out.println("timesRemoveFirst" + namesList.size() + "=" + (System.nanoTime() - start));
         nanoTimes.add(System.nanoTime() - start);

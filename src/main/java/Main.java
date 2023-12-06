@@ -7,7 +7,7 @@ import java.util.List;
 public class Main {
     static final int numberOfAttempts = 5; // количество попыток для одной коллекции
     static final int numberOfMethods = 7; //количество методов
-    static int typeOfCollection = 1; //тип коллекции: 1 - ArrayList, 2 - LinkedList
+    static int typeOfCollection = 1; //тип коллекции: 1 - ArrayList, 2 - LinkedList, 3 - Stack
     static ArrayList<Long> tempArr;
 
     public static void main(String[] args) throws IOException {
@@ -24,6 +24,11 @@ public class Main {
         startCountCol(50000, "Collection LinkedList ", 2);
         System.out.println("=====================================================================");
 
+        startCountCol(100, "Collection Stack ", 3);
+        startCountCol(2000, "Collection Stack ", 3);
+        startCountCol(50000, "Collection Stack ", 3);
+        System.out.println("=====================================================================");
+
     }
 
     private static void startCountCol(int num, String nameOfColl, int typeOfCollection) {
@@ -35,6 +40,8 @@ public class Main {
                     tempArr = new AlImpl(num).start(); break;
                 case (2):
                     tempArr = new LinkList(num).start(); break;
+                case (3):
+                    tempArr = new StackList(num).start(); break;
             }
             for (int j = 0; j <= (numberOfMethods - 1); j++) {
                 arrForCount[i][j] = tempArr.get(j);
