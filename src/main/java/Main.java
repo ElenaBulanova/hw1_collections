@@ -15,7 +15,7 @@ public class Main {
         int typeOfCollection = 1;
 
         startCountCol(100, "Collection ArrayList ", 1);
-        startCountCol(2000, "Collection ArrayList ", 1);       //System.out.println(new AlImpl(2000).start());
+        startCountCol(2000, "Collection ArrayList ", 1);
         startCountCol(50000, "Collection ArrayList ", 1);
         System.out.println("=====================================================================");
 
@@ -27,6 +27,11 @@ public class Main {
         startCountCol(100, "Collection Stack ", 3);
         startCountCol(2000, "Collection Stack ", 3);
         startCountCol(50000, "Collection Stack ", 3);
+        System.out.println("=====================================================================");
+
+        startCountCol(100, "Collection ArrayDeque ", 4);
+        startCountCol(2000, "Collection ArrayDeque ", 4);
+        startCountCol(50000, "Collection ArrayDeque ", 4);
         System.out.println("=====================================================================");
 
     }
@@ -42,6 +47,8 @@ public class Main {
                     tempArr = new LinkList(num).start(); break;
                 case (3):
                     tempArr = new StackList(num).start(); break;
+                case (4):
+                    tempArr = new ArrDeque(num).start(); break;
             }
             for (int j = 0; j <= (numberOfMethods - 1); j++) {
                 arrForCount[i][j] = tempArr.get(j);
@@ -63,5 +70,6 @@ public class Main {
             avgForNextMeth = sumForNextMeth / numberOfAttempts;
             System.out.println("Average for " + (j + 1) + " method = " + avgForNextMeth);
         }
+        System.out.println();
     }
 }
